@@ -17,7 +17,6 @@ const userData = [
 app.get('/user', (req,res) =>{
     const query =parseInt(req.query.id);
     const UserName =req.query.name;
-
     const filteredUserData = userData.filter((data) => {
         if (query && UserName) {
            return data.id === query && data.name === UserName;
@@ -31,7 +30,6 @@ app.get('/user', (req,res) =>{
 
 app.post('/user/:id', (req,res) =>{
         const userId = parseInt(req.params.id);
-
 
         const filteredUserData = userData.filter((data) => data.id === userId);
         res.json(filteredUserData);
